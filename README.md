@@ -92,6 +92,10 @@ Encapsulam `String` e validam no construtor — nunca chegam num estado inválid
 
 ## Como Executar
 
+### Pré-requisitos
+- JDK 17 ou superior
+- Docker e Docker Compose (opcional, para execução via contêiner)
+
 ### Com Docker
 ```bash
 git clone https://github.com/odavid062/Calisthenics.git
@@ -103,7 +107,12 @@ docker compose up --build
 ```bash
 git clone https://github.com/odavid062/Calisthenics.git
 cd Calisthenics
+
+# Linux / macOS
 ./mvnw spring-boot:run
+
+# Windows
+.\mvnw.cmd spring-boot:run
 ```
 
 Acesse o Swagger em: `http://localhost:8080/swagger-ui/index.html`
@@ -139,6 +148,20 @@ curl -X PUT http://localhost:8080/api/ofertas/0/confirm
 ### Regra de desconto
 - Valor total > R$ 1.000 → **10% de desconto**
 - Valor total > R$ 1.000 **e** mais de 5 itens → **15% de desconto**
+
+---
+
+## Testes
+
+Para executar os testes automatizados da aplicação:
+
+```bash
+# Linux / macOS
+./mvnw test
+
+# Windows
+.\mvnw.cmd test
+```
 
 ---
 
